@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Aspect Ratio</title>
 
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
@@ -97,6 +101,14 @@
       Segui le istruzioni incluse nello ZIP per aprirla.
     </p>
   </div>
+
+  <script>
+    if (!window.location.search.includes('_v=')) {
+      const url = new URL(window.location.href);
+      url.searchParams.set('_v', Date.now());
+      window.location.replace(url.toString());
+    }
+  </script>
 
 </body>
 </html>
