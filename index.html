@@ -4,9 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Aspect Ratio</title>
+
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
+
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
@@ -17,17 +19,21 @@
       color: #111;
       background: #fff;
     }
+
     h1 {
       font-size: 42px;
-      margin-bottom: 8px;
+      margin: 0;
     }
+
     h2 {
       margin-top: 40px;
       font-size: 24px;
     }
+
     p {
       font-size: 18px;
     }
+
     .button {
       display: inline-block;
       margin-top: 16px;
@@ -38,63 +44,99 @@
       color: #fff;
       font-weight: 600;
     }
+
     .box {
       margin-top: 32px;
       padding: 24px;
       border: 1px solid #ddd;
       border-radius: 16px;
     }
+
     .small {
       font-size: 14px;
       color: #666;
     }
+
+    .title {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+    }
   </style>
 </head>
+
 <body>
-  <h1>Aspect Ratio</h1>
+
+  <div class="title">
+    <img src="icon.png" alt="Aspect Ratio icon" class="icon">
+    <h1>Aspect Ratio</h1>
+  </div>
+
   <p class="small">
     Requisiti minimi: macOS 14 Sonoma • Apple Silicon
   </p>
+
   <p>
     Utility per macOS che analizza immagini e video e li adatta rapidamente ai formati standard.
     Basta trascinare un file per ottenere subito la risoluzione originale, l'aspect ratio più vicino
     e una serie di dimensioni alternative pronte all'uso.
   </p>
+
   <div class="box">
     <h2>Aspect ratio supportati</h2>
     <p>
       1:1, 4:5, 5:4, 3:4, 4:3, 5:7, 7:5, 2:3, 3:2, 3:5, 5:3, 9:16, 16:9
     </p>
   </div>
+
   <div class="box">
     <h2>Come funziona</h2>
     <p>
-      L'app calcola fino a 4 soluzioni per ogni formato: crop completo, due soluzioni intermedie e una con overscale.
+      Basta trascinare un file immagine o video nell'app per ottenere subito la risoluzione originale,
+      l'aspect ratio più vicino e fino a 4 soluzioni compatibili.
+    </p>
+    <p>
       Per ogni risultato vengono mostrati anche i valori ∆x e ∆y per indicare i pixel tagliati o ecceduti.
     </p>
     <p>
       È possibile modificare manualmente larghezza e altezza e applicare uno zoom con aggiornamento in tempo reale.
     </p>
   </div>
+
   <div class="box">
     <h2>Download</h2>
+
     <p class="small">
-      Versione: 19-04-2026_1
+      Versione: 19-04-2026
     </p>
+
     <a class="button" href="https://github.com/dbosch99/AspectRatio/releases/latest/download/AspectRatio-macOS.zip">
       Scarica per macOS
     </a>
+
     <p class="small">
       L'app non è firmata con certificato Apple. macOS bloccherà il primo avvio.
       Segui le istruzioni incluse nello ZIP per aprirla.
     </p>
   </div>
+
   <script>
-    if (!window.location.search.includes('_v=')) {
-      const url = new URL(window.location.href);
-      url.searchParams.set('_v', Date.now());
+    const SITE_VERSION = '19-04-2026_1';
+    const url = new URL(window.location.href);
+    const current = url.searchParams.get('_v');
+
+    if (current !== SITE_VERSION) {
+      url.searchParams.set('_v', SITE_VERSION);
       window.location.replace(url.toString());
     }
   </script>
+
 </body>
 </html>
