@@ -84,9 +84,12 @@
   </p>
 
   <p>
-    Utility per macOS che analizza immagini e video e li adatta rapidamente ai formati standard.
-    Basta trascinare un file per ottenere subito la risoluzione originale, l'aspect ratio più vicino
-    e una serie di dimensioni alternative pronte all'uso.
+    Utility per macOS che, a partire dalla risoluzione di un'immagine o di un video,
+    calcola l'aspect ratio standard più vicino tra quelli utilizzati dall'app Foto di Apple.
+  </p>
+  <p>
+    Per ogni file vengono inoltre generate automaticamente 4 risoluzioni compatibili con l'aspect ratio selezionato,
+    mostrando chiaramente le diverse modalità di crop o di adattamento.
   </p>
 
   <div class="box">
@@ -97,16 +100,46 @@
   </div>
 
   <div class="box">
-    <h2>Come funziona</h2>
+    <h2>Calcolo e logica</h2>
+
     <p>
-      Basta trascinare un file immagine o video nell'app per ottenere subito la risoluzione originale,
-      l'aspect ratio più vicino e fino a 4 soluzioni compatibili.
+      Basta trascinare un file immagine o video nell'app per ottenere la risoluzione originale
+      e l'aspect ratio standard più vicino.
     </p>
+
     <p>
-      Per ogni risultato vengono mostrati anche i valori ∆x e ∆y per indicare i pixel tagliati o ecceduti.
+      L'app genera 4 possibili risoluzioni compatibili con l'aspect ratio selezionato:
     </p>
+
     <p>
-      È possibile modificare manualmente larghezza e altezza e applicare uno zoom con aggiornamento in tempo reale.
+      • una soluzione con crop su entrambi i lati<br>
+      • una soluzione con crop solo sulla larghezza<br>
+      • una soluzione con crop solo sull'altezza<br>
+      • una soluzione senza crop, con overscale
+    </p>
+
+    <p>
+      È possibile modificare manualmente l'aspect ratio scegliendo tra quelli standard supportati,
+      per calcolare rapidamente risoluzioni alternative rispetto a quella suggerita automaticamente.
+    </p>
+
+    <p>
+      Ad esempio, partendo da un video 1080x1920 px e impostando aspect ratio 3:4:
+    </p>
+
+    <p>
+      • 1080x1440 px → crop dell'altezza<br>
+      • 1440x1920 px → nessun crop, ma overscale della base
+    </p>
+
+    <p>
+      L'app mostra inoltre come varia la risoluzione al cambiare dello zoom.
+      Ad esempio, uno zoom al 150% su un video 1080x1920 equivale a lavorare su 720x1280 px.
+    </p>
+
+    <p>
+      Questo permette di ridurre il peso dei progetti mantenendo la stessa qualità finale,
+      evitando overscale inutili.
     </p>
   </div>
 
@@ -126,7 +159,7 @@
       Segui le istruzioni incluse nello ZIP per aprirla.
     </p>
   </div>
-  
+
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
