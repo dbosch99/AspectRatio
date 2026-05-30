@@ -1,5 +1,5 @@
 // === cambia SOLO questa riga per forzare un refresh completo ===
-const CACHE = 'aspectratio-30-05-2026_A';
+const CACHE = 'aspectratio-30-05-2026_B';
 // ==============================================================================
 
 const ASSETS = [
@@ -8,6 +8,7 @@ const ASSETS = [
 
   './AspectRatio-16.png',
   './AspectRatio-32.png',
+  './AspectRatio-160.png',
   './AspectRatio-180.png',
   './AspectRatio-192.png',
   './AspectRatio-512.png'
